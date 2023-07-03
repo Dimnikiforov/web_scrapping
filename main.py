@@ -20,7 +20,7 @@ def get_vacancy():
     for vacancy in vacancy_tags:
         vacancy_title = vacancy.find_all('a', class_='serp-item__title')
         for title in vacancy_title:
-            if "flask" or 'django' in str(title).lower():
+            if "python" or 'django' in str(title).lower():
                 link = title['href']
                 sallary = vacancy.find('span', attrs={'class': 'bloko-header-section-3'})
                 if sallary != None:
