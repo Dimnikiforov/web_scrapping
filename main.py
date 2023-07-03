@@ -44,7 +44,7 @@ def get_vacancy():
 
 def write_file(vacancy_list):
     with open("vacancy.json", "w", encoding='utf-8') as f:
-        data_writer = json.dump(vacancy_list, f, ensure_ascii=False)
+        data_writer = json.dump(vacancy_list, f, ensure_ascii=False, indent=2)
 
 if __name__=='__main__':
     write_file(get_vacancy())
