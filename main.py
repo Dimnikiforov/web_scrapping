@@ -20,7 +20,7 @@ def get_vacancy():
     for vacancy in vacancy_tags:
         vacancy_title = vacancy.find_all('a', class_='serp-item__title')
         for title in vacancy_title:
-            if "python" or 'django' in str(title).lower():
+            if "flask" or 'django' in str(title).lower():
                 link = title['href']
                 sallary = vacancy.find('span', attrs={'class': 'bloko-header-section-3'})
                 if sallary != None:
@@ -47,5 +47,4 @@ def write_file(vacancy_list):
         data_writer = json.dump(vacancy_list, f, ensure_ascii=False)
 
 if __name__=='__main__':
-    get_vacancy()
     write_file(get_vacancy())
